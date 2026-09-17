@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body {
+            background-color: #3d3d3d;
+            font-family: "Times New Roman", serif;
+            font-size: 96px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        </style>
+    </head>
+    <body>
+    <div id="count">0</div>
+        <script>
+        fetch("/api/players/total")
+            .then(r => r.json())
+            .then(data => document.getElementById("count").textContent = data);
+        </script>
+    </body>
+</html>
