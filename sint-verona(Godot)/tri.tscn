@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cc0v21jg2sdny"]
+
+[ext_resource type="Script" uid="uid://bx7nhxxu27m18" path="res://CentreNPC.gd" id="1_ld1ru"]
+
+[node name="Tri" type="Node2D" unique_id=1494428461]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1011950294]
+offset_right = 64.0
+offset_bottom = 64.0
+script = ExtResource("1_ld1ru")
+
+[node name="TextEdit" type="TextEdit" parent="ColorRect" unique_id=1503798868]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Tri"
+placeholder_text = "txt"
+editable = false

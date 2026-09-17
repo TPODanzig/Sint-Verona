@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://nnlpggygsi0m"]
+
+[ext_resource type="Script" uid="uid://d1hnqrox2n714" path="res://npc_spawner.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://cbuntlmnkjymi" path="res://gamemanager.gd" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://3pkykgcnrfgv" path="res://InteractButton.gd" id="2_h2yge"]
+
+[node name="Main" type="Node2D" unique_id=1096472369]
+
+[node name="NPC Spawner" type="Node2D" parent="." unique_id=1586850766]
+script = ExtResource("1_ig7tw")
+
+[node name="PlayerInteraction" type="Node2D" parent="." unique_id=1711839701]
+
+[node name="Button" type="Button" parent="PlayerInteraction" unique_id=1413649396]
+offset_right = 200.0
+offset_bottom = 100.0
+text = "Treat"
+script = ExtResource("2_h2yge")
+
+[node name="Gamemanager" type="Node2D" parent="." unique_id=510477899]
+script = ExtResource("2_0xm2m")
+
+[connection signal="pressed" from="PlayerInteraction/Button" to="NPC Spawner" method="_on_button_pressed"]
+[connection signal="pressed" from="PlayerInteraction/Button" to="PlayerInteraction/Button" method="_on_pressed"]
