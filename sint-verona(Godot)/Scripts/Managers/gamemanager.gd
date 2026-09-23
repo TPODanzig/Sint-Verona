@@ -5,16 +5,19 @@ var player_id: String
 var save_path := "user://player_id.save"
 
 static var WrongChoiceSound
+static var CorrectChoiceSound
 
 static var currentNPC
 static var ActiveNPCRating
 static var UploadData = false
 
 static var TreatedNPCs: int = 0
+static var CorrectChoices: int = 0
 static var EndGame: bool = false
 
 func _ready() -> void:
 	WrongChoiceSound = get_child(0)
+	CorrectChoiceSound = get_child(1)
 	
 	if FileAccess.file_exists(save_path):
 		var f = FileAccess.open(save_path, FileAccess.READ)
@@ -30,8 +33,6 @@ func _process(delta: float) -> void:
 	if (TreatedNPCs > 4):
 		EndGame = true
 	
-	if (EndGame == true):
-		get_tree().change_scene_to_file("res://MainMenu.tscn")
 	
 	if (UploadData == true):
 		_uploadData()
@@ -53,3 +54,6 @@ func _on_request_completed(result, code, headers, body):
 
 static func _WrongChoiceSound():
 	WrongChoiceSound.play()
+	
+static func _CorrectChoiceSound():
+	CorrectChoiceSound.play()

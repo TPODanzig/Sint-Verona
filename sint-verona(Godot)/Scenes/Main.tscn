@@ -1,14 +1,22 @@
 [gd_scene format=3 uid="uid://nnlpggygsi0m"]
 
-[ext_resource type="Script" uid="uid://d1hnqrox2n714" path="res://npc_spawner.gd" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://cbuntlmnkjymi" path="res://gamemanager.gd" id="2_0xm2m"]
-[ext_resource type="Script" uid="uid://3pkykgcnrfgv" path="res://InteractButton.gd" id="2_h2yge"]
-[ext_resource type="AudioStream" uid="uid://823omgd3v82m" path="res://WrongSound.mp3" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://d1hnqrox2n714" path="res://Scripts/NPC/npc_spawner.gd" id="1_pbw6q"]
+[ext_resource type="Script" uid="uid://3pkykgcnrfgv" path="res://Scripts/Interaction/InteractButton.gd" id="2_v1gob"]
+[ext_resource type="Script" uid="uid://cbuntlmnkjymi" path="res://Scripts/Managers/gamemanager.gd" id="3_jw32o"]
+[ext_resource type="AudioStream" uid="uid://823omgd3v82m" path="res://Sounds/WrongSound.mp3" id="4_50glp"]
+[ext_resource type="AudioStream" uid="uid://cu5fywqcr37vc" path="res://Sounds/CorrectSound.mp3" id="5_vy5pj"]
 
 [node name="Main" type="Node2D" unique_id=1096472369]
 
 [node name="NPC Spawner" type="Node2D" parent="." unique_id=1586850766]
-script = ExtResource("1_ig7tw")
+script = ExtResource("1_pbw6q")
+
+[node name="Label" type="Label" parent="NPC Spawner" unique_id=919323939]
+offset_right = 160.0
+offset_bottom = 23.0
+text = "You got 0/5 correct!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PlayerInteraction" type="Node2D" parent="." unique_id=1711839701]
 
@@ -16,28 +24,32 @@ script = ExtResource("1_ig7tw")
 offset_right = 200.0
 offset_bottom = 100.0
 text = "M1"
-script = ExtResource("2_h2yge")
+script = ExtResource("2_v1gob")
 ButtonIndex = 1
 
 [node name="M2" type="Button" parent="PlayerInteraction" unique_id=905149699]
 offset_right = 200.0
 offset_bottom = 100.0
 text = "M2"
-script = ExtResource("2_h2yge")
+script = ExtResource("2_v1gob")
 ButtonIndex = 2
 
 [node name="M3" type="Button" parent="PlayerInteraction" unique_id=1660015750]
 offset_right = 200.0
 offset_bottom = 100.0
 text = "M3"
-script = ExtResource("2_h2yge")
+script = ExtResource("2_v1gob")
 ButtonIndex = 3
 
 [node name="Gamemanager" type="Node2D" parent="." unique_id=510477899]
-script = ExtResource("2_0xm2m")
+script = ExtResource("3_jw32o")
 
 [node name="IncorrectSound" type="AudioStreamPlayer2D" parent="Gamemanager" unique_id=266935913]
-stream = ExtResource("4_1bvp3")
+stream = ExtResource("4_50glp")
+volume_db = -15.0
+
+[node name="CorrectSound" type="AudioStreamPlayer2D" parent="Gamemanager" unique_id=832456653]
+stream = ExtResource("5_vy5pj")
 
 [connection signal="pressed" from="PlayerInteraction/M1" to="NPC Spawner" method="_on_button_pressed"]
 [connection signal="pressed" from="PlayerInteraction/M1" to="PlayerInteraction/M1" method="_on_pressed"]

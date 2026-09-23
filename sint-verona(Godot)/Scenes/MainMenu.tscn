@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://mfugc0sgfipv"]
 
-[ext_resource type="Script" uid="uid://dlw2ufibp4jp5" path="res://StartGame.gd" id="1_i26rj"]
+[ext_resource type="Script" uid="uid://dlw2ufibp4jp5" path="res://Scripts/Interaction/StartGame.gd" id="1_i26rj"]
 
 [node name="Node2D" type="Node2D" unique_id=951187844]
 
