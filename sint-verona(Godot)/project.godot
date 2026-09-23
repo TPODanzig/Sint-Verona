@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Sint Verona"
-run/main_scene="uid://nnlpggygsi0m"
+run/main_scene="uid://mfugc0sgfipv"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://mfugc0sgfipv"]
+
+[ext_resource type="Script" uid="uid://dlw2ufibp4jp5" path="res://StartGame.gd" id="1_i26rj"]
+
+[node name="Node2D" type="Node2D" unique_id=951187844]
+
+[node name="Button" type="Button" parent="." unique_id=289488616]
+offset_right = 200.0
+offset_bottom = 100.0
+text = "Start Game"
+script = ExtResource("1_i26rj")
+
+[connection signal="button_down" from="Button" to="Button" method="_on_pressed"]

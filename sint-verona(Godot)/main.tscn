@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d1hnqrox2n714" path="res://npc_spawner.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cbuntlmnkjymi" path="res://gamemanager.gd" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://3pkykgcnrfgv" path="res://InteractButton.gd" id="2_h2yge"]
+[ext_resource type="AudioStream" uid="uid://823omgd3v82m" path="res://WrongSound.mp3" id="4_1bvp3"]
 
 [node name="Main" type="Node2D" unique_id=1096472369]
 
@@ -11,14 +12,34 @@ script = ExtResource("1_ig7tw")
 
 [node name="PlayerInteraction" type="Node2D" parent="." unique_id=1711839701]
 
-[node name="Button" type="Button" parent="PlayerInteraction" unique_id=1413649396]
+[node name="M1" type="Button" parent="PlayerInteraction" unique_id=1413649396]
 offset_right = 200.0
 offset_bottom = 100.0
-text = "Treat"
+text = "M1"
 script = ExtResource("2_h2yge")
+ButtonIndex = 1
+
+[node name="M2" type="Button" parent="PlayerInteraction" unique_id=905149699]
+offset_right = 200.0
+offset_bottom = 100.0
+text = "M2"
+script = ExtResource("2_h2yge")
+ButtonIndex = 2
+
+[node name="M3" type="Button" parent="PlayerInteraction" unique_id=1660015750]
+offset_right = 200.0
+offset_bottom = 100.0
+text = "M3"
+script = ExtResource("2_h2yge")
+ButtonIndex = 3
 
 [node name="Gamemanager" type="Node2D" parent="." unique_id=510477899]
 script = ExtResource("2_0xm2m")
 
-[connection signal="pressed" from="PlayerInteraction/Button" to="NPC Spawner" method="_on_button_pressed"]
-[connection signal="pressed" from="PlayerInteraction/Button" to="PlayerInteraction/Button" method="_on_pressed"]
+[node name="IncorrectSound" type="AudioStreamPlayer2D" parent="Gamemanager" unique_id=266935913]
+stream = ExtResource("4_1bvp3")
+
+[connection signal="pressed" from="PlayerInteraction/M1" to="NPC Spawner" method="_on_button_pressed"]
+[connection signal="pressed" from="PlayerInteraction/M1" to="PlayerInteraction/M1" method="_on_pressed"]
+[connection signal="pressed" from="PlayerInteraction/M2" to="PlayerInteraction/M2" method="_on_pressed"]
+[connection signal="pressed" from="PlayerInteraction/M3" to="PlayerInteraction/M3" method="_on_pressed"]

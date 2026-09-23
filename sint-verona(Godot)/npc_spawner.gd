@@ -6,8 +6,11 @@ extends Node2D
 	preload("res://sqar.tscn")
 ]
 
-func _ready() -> void:
-	pass
+var NPCRating: Array[int] = [
+	1,
+	2,
+	3
+]
 
 
 func _process(delta: float) -> void:
@@ -19,3 +22,4 @@ func _spawnNPC() -> void:
 	var NPC = NPCLooks[randf_range(0, len(NPCLooks))].instantiate()
 	GameManager.currentNPC = NPC
 	add_child(NPC)
+	GameManager.ActiveNPCRating = NPCRating[randf_range(0, len(NPCRating))]

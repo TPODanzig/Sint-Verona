@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://dpbah4jf6kak2"]
 
-[ext_resource type="Script" uid="uid://bx7nhxxu27m18" path="res://CentreNPC.gd" id="1_7hubk"]
+[ext_resource type="Script" uid="uid://bx7nhxxu27m18" path="res://NPCScript.gd" id="1_7hubk"]
 
 [node name="Sqar" type="Node2D" unique_id=1494428461]
+script = ExtResource("1_7hubk")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1011950294]
 offset_right = 64.0
 offset_bottom = 64.0
 color = Color(0.50534403, 0.5053441, 0.50534403, 1)
-script = ExtResource("1_7hubk")
 
 [node name="TextEdit" type="TextEdit" parent="ColorRect" unique_id=1365344727]
 layout_mode = 1
