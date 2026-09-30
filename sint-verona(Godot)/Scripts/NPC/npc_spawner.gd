@@ -14,6 +14,8 @@ var NPCRating: Array[int] = [
 	3
 ]
 
+var result
+
 func _ready() -> void:
 	WinText = get_child(0)
 	WinText.size = get_viewport_rect().size
@@ -24,7 +26,14 @@ func _process(delta: float) -> void:
 		_spawnNPC()
 	
 	if GameManager.EndGame == true :
-		WinText.text = "You got " + str(GameManager.CorrectChoices) + "/5 choices correct!!!"
+		result = {
+			(GameManager.CorrectChoices == 0): "come on, you can do better!",
+			(GameManager.CorrectChoices > 0 && GameManager.CorrectChoices < 3): "certainly room for improvement!",
+			(GameManager.CorrectChoices > 2 && GameManager.CorrectChoices < 5): "good job!",
+			(GameManager.CorrectChoices == 5): "perfect!!!"
+		}[true]
+		
+		WinText.text = "You got " + str(GameManager.CorrectChoices) + "/5 choices correct, " + result
 
 
 func _spawnNPC() -> void:

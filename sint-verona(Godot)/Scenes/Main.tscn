@@ -51,6 +51,13 @@ volume_db = -15.0
 [node name="CorrectSound" type="AudioStreamPlayer2D" parent="Gamemanager" unique_id=832456653]
 stream = ExtResource("5_vy5pj")
 
+[node name="Label" type="Label" parent="Gamemanager" unique_id=1632636207]
+offset_top = 132.0
+offset_right = 1152.0
+offset_bottom = 331.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="PlayerInteraction/M1" to="NPC Spawner" method="_on_button_pressed"]
 [connection signal="pressed" from="PlayerInteraction/M1" to="PlayerInteraction/M1" method="_on_pressed"]
 [connection signal="pressed" from="PlayerInteraction/M2" to="PlayerInteraction/M2" method="_on_pressed"]

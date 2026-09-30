@@ -14,6 +14,7 @@ color = Color(0.5882353, 0.5882353, 0.5882353, 1)
 layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
-text = "Tri"
+text = "T  T
+/\\"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -15,9 +15,12 @@ static var TreatedNPCs: int = 0
 static var CorrectChoices: int = 0
 static var EndGame: bool = false
 
+static var NPCDialogue
+
 func _ready() -> void:
 	WrongChoiceSound = get_child(0)
 	CorrectChoiceSound = get_child(1)
+	NPCDialogue = get_child(2)
 	
 	if FileAccess.file_exists(save_path):
 		var f = FileAccess.open(save_path, FileAccess.READ)
@@ -32,6 +35,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (TreatedNPCs > 4):
 		EndGame = true
+	
+	if (currentNPC == null):
+		NPCDialogue.text = ""
+
 	
 	
 	if (UploadData == true):

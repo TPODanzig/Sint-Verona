@@ -14,6 +14,7 @@ color = Color(0.49019608, 0.49019608, 0.49019608, 1)
 layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
-text = "Sqar"
+text = "O  O
+___"
 horizontal_alignment = 1
 vertical_alignment = 1
